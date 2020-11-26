@@ -4,7 +4,3 @@ spring:
     username: postgres
     password: admin
 
-
-
-
-

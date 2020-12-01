@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 
 import uepb.DTO.UserExampleDTO;
 import uepb.Model.UserExample;
@@ -15,11 +17,13 @@ import uepb.Repository.UserExampleRepository;
 
 @RestController
 @CrossOrigin
+@Api(value = "Usuarios")
 public class UserExampleController {
     
     @Autowired
     private UserExampleRepository userRepository;
 
+    @ApiOperation(value = "Cadastra um novo usuario")
     @PostMapping("/api/inscricao")
     @ResponseBody
     public ResponseEntity<UserExample> createUser(@RequestBody UserExampleDTO user) {
